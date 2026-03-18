@@ -1,0 +1,13 @@
+com\lightmall\user\controller\UserController.class
+com\lightmall\user\config\Knife4jConfig.class
+com\lightmall\user\mapper\UserMapper.class
+com\lightmall\user\model\RegisterRequest.class
+com\lightmall\user\UserApplication.class
+com\lightmall\user\model\LoginResponse.class
+com\lightmall\user\service\UserService.class
+com\lightmall\user\model\LoginRequest.class
+com\lightmall\user\model\User.class
+com\lightmall\user\service\impl\UserServiceImpl.class
+com\lightmall\user\controller\TestController.class
+com\lightmall\user\config\WebMvcConfig.class
+com\lightmall\user\model\Result.class
