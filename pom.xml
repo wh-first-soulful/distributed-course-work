@@ -12,6 +12,10 @@
     <modules>
         <module>lightmall-common</module>
         <module>lightmall-user</module>
+        <module>lightmall-gateway</module>
+        <module>lightmall-goods</module>
+        <module>lightmall-order</module>
+        <module>lightmall-stock</module>
     </modules>
 
     <properties>

@@ -1,0 +1,11 @@
+com\lightmall\order\model\Order.class
+com\lightmall\order\service\impl\OrderServiceImpl.class
+com\lightmall\order\mapper\SeckillOrderMapper.class
+com\lightmall\order\mapper\OrderMapper.class
+com\lightmall\order\model\SeckillOrder.class
+com\lightmall\order\service\impl\SeckillOrderServiceImpl.class
+com\lightmall\order\service\OrderService.class
+com\lightmall\order\controller\OrderController.class
+com\lightmall\order\service\SeckillOrderService.class
+com\lightmall\order\config\Knife4jConfig.class
+com\lightmall\order\OrderApplication.class

@@ -1,0 +1,17 @@
+com\lightmall\goods\mapper\GoodsMapper.class
+com\lightmall\goods\model\Goods.class
+com\lightmall\goods\controller\SeckillGoodsController.class
+com\lightmall\goods\model\GoodsDTO.class
+com\lightmall\goods\service\GoodsService.class
+com\lightmall\goods\config\MyMetaObjectHandler.class
+com\lightmall\goods\GoodsApplication.class
+com\lightmall\goods\service\SeckillGoodsService.class
+com\lightmall\goods\mapper\SeckillGoodsMapper.class
+com\lightmall\goods\config\Knife4jConfig.class
+com\lightmall\goods\model\SeckillGoods.class
+com\lightmall\goods\model\SeckillGoodsUpdateDTO.class
+com\lightmall\goods\model\GoodsUpdateDTO.class
+com\lightmall\goods\model\SeckillGoodsDTO.class
+com\lightmall\goods\service\impl\GoodsServiceImpl.class
+com\lightmall\goods\service\impl\SeckillGoodsServiceImpl.class
+com\lightmall\goods\controller\GoodsController.class
