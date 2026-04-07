@@ -29,6 +29,20 @@ public class StockServiceImpl extends ServiceImpl<StockMapper, Stock> implements
     }
 
     @Override
+    @Transactional
+    public boolean lockStock(Long goodsId, Integer quantity) {
+        int result = getBaseMapper().lockStock(goodsId, quantity);
+        return result > 0;
+    }
+
+    @Override
+    @Transactional
+    public boolean unlockStock(Long goodsId, Integer quantity) {
+        int result = getBaseMapper().unlockStock(goodsId, quantity);
+        return result > 0;
+    }
+
+    @Override
     public boolean updateStock(Stock stock) {
         return updateById(stock);
     }

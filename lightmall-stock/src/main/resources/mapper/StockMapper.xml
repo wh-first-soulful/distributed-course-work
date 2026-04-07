@@ -4,11 +4,19 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.lightmall.stock.mapper.StockMapper">
     <update id="decreaseStock">
-        UPDATE t_stock SET stock = stock - #{quantity}, version = version + 1
-        WHERE goods_id = #{goodsId} AND stock >= #{quantity}
+        UPDATE t_stock SET stock_num = stock_num - #{quantity}, available_num = available_num - #{quantity}, version = version + 1
+        WHERE goods_id = #{goodsId} AND available_num >= #{quantity}
     </update>
     <update id="increaseStock">
-        UPDATE t_stock SET stock = stock + #{quantity}
+        UPDATE t_stock SET stock_num = stock_num + #{quantity}, available_num = available_num + #{quantity}
         WHERE goods_id = #{goodsId}
+    </update>
+    <update id="lockStock">
+        UPDATE t_stock SET lock_num = lock_num + #{quantity}, available_num = available_num - #{quantity}
+        WHERE goods_id = #{goodsId} AND available_num >= #{quantity}
+    </update>
+    <update id="unlockStock">
+        UPDATE t_stock SET lock_num = lock_num - #{quantity}, available_num = available_num + #{quantity}
+        WHERE goods_id = #{goodsId} AND lock_num >= #{quantity}
     </update>
 </mapper>

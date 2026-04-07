@@ -1,7 +1,10 @@
+com\lightmall\stock\model\StockUpdateDTO.class
+com\lightmall\stock\mapper\StockMapper.class
+com\lightmall\stock\config\Knife4jConfig.class
 com\lightmall\stock\model\Stock.class
 com\lightmall\stock\StockApplication.class
+com\lightmall\stock\model\StockOperationDTO.class
 com\lightmall\stock\service\impl\StockServiceImpl.class
-com\lightmall\stock\mapper\StockMapper.class
 com\lightmall\stock\controller\StockController.class
 com\lightmall\stock\service\StockService.class
-com\lightmall\stock\config\Knife4jConfig.class
+com\lightmall\stock\model\StockDTO.class

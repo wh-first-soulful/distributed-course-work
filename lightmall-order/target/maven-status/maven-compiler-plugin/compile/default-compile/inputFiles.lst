@@ -1,10 +1,13 @@
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\SeckillOrder.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\OrderApplication.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\OrderDTO.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\Order.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\mapper\SeckillOrderMapper.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\service\impl\OrderServiceImpl.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\service\impl\SeckillOrderServiceImpl.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\mapper\OrderMapper.java
-D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\SeckillOrder.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\service\SeckillOrderService.java
-D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\OrderApplication.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\OrderUpdateDTO.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\controller\OrderController.java
-D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\model\Order.java
+D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\config\Knife4jConfig.java
 D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\service\OrderService.java
-D:\code\trae_projects\lightmall\lightmall-order\src\main\java\com\lightmall\order\mapper\SeckillOrderMapper.java
