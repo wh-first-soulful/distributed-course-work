@@ -1,0 +1,10 @@
+# Dockerfile.order
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY lightmall-order/target/lightmall-order-1.0.0-SNAPSHOT.jar /app/lightmall-order.jar
+
+EXPOSE 9083
+
+CMD ["java", "-jar", "lightmall-order.jar"]

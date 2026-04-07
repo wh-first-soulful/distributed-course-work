@@ -3,25 +3,25 @@ spring:
     gateway:
       routes:
         - id: user-service
-          uri: http://localhost:9081
+          uri: http://user:9081
           predicates:
             - Path=/api/user/**
           filters:
             - StripPrefix=2
         - id: goods-service
-          uri: http://localhost:9082
+          uri: http://goods:9082
           predicates:
             - Path=/api/goods/**
           filters:
             - StripPrefix=2
         - id: order-service
-          uri: http://localhost:9083
+          uri: http://order:9083
           predicates:
             - Path=/api/order/**
           filters:
             - StripPrefix=2
         - id: stock-service
-          uri: http://localhost:9084
+          uri: http://stock:9084
           predicates:
             - Path=/api/stock/**
           filters:

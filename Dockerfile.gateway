@@ -1,0 +1,10 @@
+# Dockerfile.gateway
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY lightmall-gateway/target/lightmall-gateway-1.0.0-SNAPSHOT.jar /app/lightmall-gateway.jar
+
+EXPOSE 9080
+
+CMD ["java", "-jar", "lightmall-gateway.jar"]

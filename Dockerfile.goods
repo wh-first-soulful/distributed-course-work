@@ -1,0 +1,10 @@
+# Dockerfile.goods
+FROM openjdk:11-jre-slim
+
+WORKDIR /app
+
+COPY lightmall-goods/target/lightmall-goods-1.0.0-SNAPSHOT.jar /app/lightmall-goods.jar
+
+EXPOSE 9082
+
+CMD ["java", "-jar", "lightmall-goods.jar"]

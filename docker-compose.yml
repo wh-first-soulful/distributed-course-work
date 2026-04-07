@@ -1,0 +1,115 @@
+# docker-compose.yml
+version: '3.8'
+
+services:
+  # MySQL数据库
+  mysql:
+    image: mysql:8.0
+    container_name: lightmall-mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: lightmall
+      MYSQL_USER: lightmall
+      MYSQL_PASSWORD: lightmall
+    ports:
+      - "3307:3306"
+    volumes:
+      - ./docker/mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql-data:/var/lib/mysql
+    networks:
+      - lightmall-network
+    restart: always
+
+  # Nginx反向代理
+  nginx:
+    image: nginx:1.21
+    container_name: lightmall-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    networks:
+      - lightmall-network
+    depends_on:
+      - gateway
+    restart: always
+
+  # 网关服务
+  gateway:
+    build:
+      context: .
+      dockerfile: Dockerfile.gateway
+    container_name: lightmall-gateway
+    ports:
+      - "9080:9080"
+    networks:
+      - lightmall-network
+    depends_on:
+      - mysql
+    restart: always
+
+  # 商品服务
+  goods:
+    build:
+      context: .
+      dockerfile: Dockerfile.goods
+    container_name: lightmall-goods
+    ports:
+      - "9082:9082"
+    networks:
+      - lightmall-network
+    depends_on:
+      - mysql
+    restart: always
+
+  # 订单服务
+  order:
+    build:
+      context: .
+      dockerfile: Dockerfile.order
+    container_name: lightmall-order
+    ports:
+      - "9083:9083"
+    networks:
+      - lightmall-network
+    depends_on:
+      - mysql
+    restart: always
+
+  # 库存服务
+  stock:
+    build:
+      context: .
+      dockerfile: Dockerfile.stock
+    container_name: lightmall-stock
+    ports:
+      - "9085:9084"
+    networks:
+      - lightmall-network
+    depends_on:
+      - mysql
+    restart: always
+
+  # 用户服务
+  user:
+    build:
+      context: .
+      dockerfile: Dockerfile.user
+    container_name: lightmall-user
+    ports:
+      - "9081:9081"
+    networks:
+      - lightmall-network
+    depends_on:
+      - mysql
+    restart: always
+
+# 网络配置
+networks:
+  lightmall-network:
+    driver: bridge
+
+# 数据卷配置
+volumes:
+  mysql-data:
+    driver: local
