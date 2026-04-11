@@ -3,8 +3,11 @@ FROM openjdk:11-jre-slim
 
 WORKDIR /app
 
+ENV LANG=C.UTF-8
+ENV LC_ALL=C.UTF-8
+
 COPY lightmall-gateway/target/lightmall-gateway-1.0.0-SNAPSHOT.jar /app/lightmall-gateway.jar
 
 EXPOSE 9080
 
-CMD ["java", "-jar", "lightmall-gateway.jar"]
+CMD ["java", "-Dfile.encoding=UTF-8", "-jar", "lightmall-gateway.jar"]

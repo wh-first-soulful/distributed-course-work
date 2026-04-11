@@ -7,7 +7,7 @@ services:
     image: mysql:8.0
     container_name: lightmall-mysql
     environment:
-      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_PASSWORD: jhx714050
       MYSQL_DATABASE: lightmall
       MYSQL_USER: lightmall
       MYSQL_PASSWORD: lightmall
@@ -19,6 +19,12 @@ services:
     networks:
       - lightmall-network
     restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci --init-connect='SET NAMES utf8mb4' --skip-character-set-client-handshake
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-pjhx714050"]
+      interval: 10s
+      timeout: 5s
+      retries: 20
 
   # Nginx反向代理
   nginx:
@@ -45,7 +51,8 @@ services:
     networks:
       - lightmall-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     restart: always
 
   # 商品服务
@@ -59,7 +66,8 @@ services:
     networks:
       - lightmall-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     restart: always
 
   # 订单服务
@@ -73,7 +81,8 @@ services:
     networks:
       - lightmall-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     restart: always
 
   # 库存服务
@@ -87,7 +96,8 @@ services:
     networks:
       - lightmall-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
     restart: always
 
   # 用户服务
@@ -101,7 +111,20 @@ services:
     networks:
       - lightmall-network
     depends_on:
-      - mysql
+      mysql:
+        condition: service_healthy
+    restart: always
+
+  # Redis缓存
+  redis:
+    image: redis:7.0
+    container_name: lightmall-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - lightmall-network
     restart: always
 
 # 网络配置
@@ -112,4 +135,6 @@ networks:
 # 数据卷配置
 volumes:
   mysql-data:
+    driver: local
+  redis-data:
     driver: local

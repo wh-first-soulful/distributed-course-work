@@ -7,25 +7,25 @@ spring:
           predicates:
             - Path=/api/user/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=0
         - id: goods-service
           uri: http://goods:9082
           predicates:
             - Path=/api/goods/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=0
         - id: order-service
           uri: http://order:9083
           predicates:
             - Path=/api/order/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=0
         - id: stock-service
           uri: http://stock:9084
           predicates:
             - Path=/api/stock/**
           filters:
-            - StripPrefix=2
+            - StripPrefix=0
 
 server:
   port: 9080

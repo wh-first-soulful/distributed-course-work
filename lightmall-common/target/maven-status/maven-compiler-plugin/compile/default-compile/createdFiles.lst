@@ -1,2 +1,5 @@
+com\lightmall\common\redis\RedisUtil.class
+com\lightmall\common\redis\RedisConfig.class
 com\lightmall\common\JwtUtils.class
+com\lightmall\common\redis\BloomFilterUtil.class
 com\lightmall\common\Result.class

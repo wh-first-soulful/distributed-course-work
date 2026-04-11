@@ -1,2 +1,5 @@
 D:\code\trae_projects\lightmall\lightmall-common\src\main\java\com\lightmall\common\JwtUtils.java
 D:\code\trae_projects\lightmall\lightmall-common\src\main\java\com\lightmall\common\Result.java
+D:\code\trae_projects\lightmall\lightmall-common\src\main\java\com\lightmall\common\redis\BloomFilterUtil.java
+D:\code\trae_projects\lightmall\lightmall-common\src\main\java\com\lightmall\common\redis\RedisUtil.java
+D:\code\trae_projects\lightmall\lightmall-common\src\main\java\com\lightmall\common\redis\RedisConfig.java

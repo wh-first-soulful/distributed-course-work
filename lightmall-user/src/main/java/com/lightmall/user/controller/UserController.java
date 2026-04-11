@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Api(tags = "用户管理")
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
@@ -53,7 +53,7 @@ public class UserController {
     }
 
     @ApiOperation(value = "根据ID获取用户信息")
-    @GetMapping(value = "/get/{id}", produces = "application/json")
+    @GetMapping(value = "/{id}", produces = "application/json")
     public Result getById(@ApiParam(name = "用户ID", required = true) @PathVariable Long id) {
         logger.info("获取用户信息: {}", id);
         try {
